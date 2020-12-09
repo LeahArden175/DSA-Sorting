@@ -124,3 +124,24 @@ console.log('``````')
 mergeSort(LL)
 console.log('a f t e r')
 LL.display()
+
+
+function bucketSort(array, high, low) {
+    let bucketSize = Math.floor(Math.sqrt(array.length))
+    let first = []
+    let second = []
+  
+    for(let i = 0; i < array.length; i++) {
+      if(array[i] < (high+low)/2){
+        first.push(array[i])
+      } else {
+        second.push(array[i])
+      }
+    }
+  
+    mergeSort(first)
+    mergeSort(second)
+    return first.concat(second)
+  }
+  
+  console.log(bucketSort([1,4,2,6,2,6,3,7], 1, 7))
