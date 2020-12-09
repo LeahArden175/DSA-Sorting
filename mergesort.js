@@ -127,7 +127,6 @@ LL.display()
 
 
 function bucketSort(array, high, low) {
-    let bucketSize = Math.floor(Math.sqrt(array.length))
     let first = []
     let second = []
   
